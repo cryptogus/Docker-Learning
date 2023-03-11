@@ -28,3 +28,9 @@ https://docs.docker.com/compose/install/linux/
 ## Docker update script in Linux
 리눅스 배포판에서 제공되는 도커 패키지가 있지만 최근에는 도커가 별도의 인스톨러를 통해 제공되기 때문에 패키지가 구 버전일 경우가 있다. 따라서 새 버전이 나올 때마다 Dokcer update script를 사용하는 방법이 있다.\
 https://get.docker.com/
+## docker
+## Initializing the Docker environment
+```
+docker rm -f `docker ps -aq`
+docker rmi -f `docker images -q`
+```
