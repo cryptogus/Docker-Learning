@@ -28,9 +28,32 @@ https://docs.docker.com/compose/install/linux/
 ## Docker update script in Linux
 리눅스 배포판에서 제공되는 도커 패키지가 있지만 최근에는 도커가 별도의 인스톨러를 통해 제공되기 때문에 패키지가 구 버전일 경우가 있다. 따라서 새 버전이 나올 때마다 Dokcer update script를 사용하는 방법이 있다.\
 https://get.docker.com/
-## docker
+## docker without sudo
+
+https://docs.docker.com/engine/install/linux-postinstall/ \
+도커는 기본적으로 `sudo` 권한을 요구한다. 하지만 매번 `sudo`를 붙여주긴 귀찮다면 아래와 같이 한다면 `sudo` 명령어 없이 docker 실행이 가능하다.
+
+```
+# user 변수 확인
+echo $USER
+
+# 현재 사용중인 사용자를 docker 그룹에 등록
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+socket permission denied 발생 시
+```
+sudo chmod 666 /var/run/docker.sock
+```
 ## Initializing the Docker environment
+모든 docker 삭제 command
 ```
 docker rm -f `docker ps -aq`
 docker rmi -f `docker images -q`
+```
+특정 docker 지정 삭제 command
+```
+docker rm -f <>
+docker rmi -f <IMAGE ID>
 ```
