@@ -8,13 +8,13 @@ The recommended book is "Docker in Action ed2"
 Not using WSL (WSL2를 이용한 ubuntu 환경자체가 도커라서 도커 실행이 안된다.)
 
 How to check computer information in Ubuntu
-```
-sudo apt install inxi
-sudo inxi -Fz
+```bash
+$ sudo apt install inxi
+$ sudo inxi -Fz
 ```
 or
-```
-cat /proc/cpuinfo
+```bash
+$ cat /proc/cpuinfo
 ```
 ## Docker Desktop for Mac or Windows or Linux
 https://www.docker.com/get-started/
@@ -33,27 +33,57 @@ https://get.docker.com/
 https://docs.docker.com/engine/install/linux-postinstall/ \
 도커는 기본적으로 `sudo` 권한을 요구한다. 하지만 매번 `sudo`를 붙여주긴 귀찮다면 아래와 같이 한다면 `sudo` 명령어 없이 docker 실행이 가능하다.
 
-```
+```bash
 # user 변수 확인
-echo $USER
+$ echo $USER
 
 # 현재 사용중인 사용자를 docker 그룹에 등록
-sudo groupadd docker
-sudo usermod -aG docker $USER
+$ sudo groupadd docker
+$ sudo usermod -aG docker $USER
 newgrp docker
 ```
 socket permission denied 발생 시
+```bash
+$ sudo chmod 666 /var/run/docker.sock
 ```
-sudo chmod 666 /var/run/docker.sock
+
+## Execute a command in a running container
+
+https://docs.docker.com/engine/reference/commandline/exec/ \
+For example in Ubuntu
+```bash
+# 실행 중인 CONTAINER ID 확인
+$ docker ps
+
+# 컨테이너 내부에 접속해 터미널 조작
+$ docker exec -it <CONTAINER ID or NAMES> /bin/bash
+
+# 컨테이너에서 나가는 명령어
+$ exit
+```
+```bat
+# 윈도우라면 명령 프롬프트가 뜨고 리눅스라면 bash가 뜰 것이다.
+# 도커의 특징인 운영체제 공유때문!
+docker container run --interactive --tty <REPOSITORY>
 ```
 ## Initializing the Docker environment
-모든 docker 삭제 command
+```bash
+# 실행 중인 docker 조회
+$ docker ps
+# 모든 docker 조회
+$ docker ps -a
+# 모든 image 조회
+$ docker images
 ```
-docker rm -f `docker ps -aq`
-docker rmi -f `docker images -q`
+모든 docker 삭제 command
+```bash
+# -q 옵션은 ID 만 표시 되도록 하는 옵션
+# 리눅스 백쿼터에 대한 지식 필요
+$ docker rm -f `docker ps -aq`
+$ docker rmi -f `docker images -q`
 ```
 특정 docker 지정 삭제 command
-```
-docker rm -f <>
-docker rmi -f <IMAGE ID>
+```bash
+$ docker rm -f <CONTAINER ID>
+$ docker rmi -f <IMAGE ID>
 ```
