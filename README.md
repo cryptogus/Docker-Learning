@@ -89,3 +89,16 @@ $ docker rmi -f `docker images -q`
 $ docker rm -f <CONTAINER ID>
 $ docker rmi -f <IMAGE ID>
 ```
+Dokcerfile 실행
+```bash
+$ docker build -t oqs_tom:v1 . # --network <nat 등> 원하는 option 추가
+$ docker start <CONTAINER ID or NAMES>
+```
+
+### TroubleShooting
+```bash
+E: Failed to fetch http://deb.debian.org/debian/pool/main/libt/libtool/libtool_2.4.6-15_all.deb  Error reading from server - read (104: Connection reset by peer) [IP: 146.75.50.132 80]
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+```
+**solution?**  
+https://lxadm.com/reason-error-reading-from-remote-server/
