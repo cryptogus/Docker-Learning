@@ -74,6 +74,8 @@ $ docker ps
 $ docker ps -a
 # 모든 image 조회
 $ docker images
+# 대상 컨테이너의 상세 정보 확인
+$ docker inspect [OPTIONS] NAME|ID [NAME|ID...]
 ```
 모든 docker 삭제 command
 ```bash
