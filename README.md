@@ -93,7 +93,9 @@ Dokcerfile 실행
 reference → https://docs.docker.com/engine/reference/commandline/build/
 ```bash
 $ docker build -t oqs_tom:v1 . # --network <nat 등> 원하는 option 추가
-$ docker start <CONTAINER ID or NAMES>
+$ docker run -d -p 8080:8080 oqs_tom:v1
+# tomcat tls or tomcat https 인증서 적용법 등 검색
+# server.xml 수정으로 기억
 ```
 
 ### TroubleShooting
