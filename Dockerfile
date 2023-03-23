@@ -15,12 +15,12 @@ ENV CATALINA_BASE /root/apache-tomcat-10.0.23
 # ENV OPENSSL_DIR=/root/openssl
 # tomcat-native
 RUN tar xvzf /root/apache-tomcat-10.0.23/bin/tomcat-native.tar.gz -C bin/
-RUN cd /root/apache-tomcat-10.0.23/bin/tomcat-native-1.2.35-src/native
+RUN cd /root/apache-tomcat-10.0.23/bin/tomcat-native-1.2.35-src/native &&\
    ./configure --with-apr=/usr/bin/apr-1-config \
                  --with-java-home=$JAVA_HOME \
                  --with-ssl=yes \
-                 --prefix=$CATALINA_HOME
-RUN make && make install
+                 --prefix=$CATALINA_HOME &&\
+    make && make install
 
 # https://github.com/open-quantum-safe/openssl
 RUN git clone https://github.com/open-quantum-safe/openssl.git openssl
