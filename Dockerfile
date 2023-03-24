@@ -14,7 +14,7 @@ ENV CATALINA_HOME /root/apache-tomcat-10.0.23
 ENV CATALINA_BASE /root/apache-tomcat-10.0.23
 # ENV OPENSSL_DIR=/root/openssl
 # tomcat-native
-RUN tar xvzf /root/apache-tomcat-10.0.23/bin/tomcat-native.tar.gz -C bin/
+RUN tar xvzf /root/apache-tomcat-10.0.23/bin/tomcat-native.tar.gz -C /root/apache-tomcat-10.0.23/bin
 RUN cd /root/apache-tomcat-10.0.23/bin/tomcat-native-1.2.35-src/native &&\
    ./configure --with-apr=/usr/bin/apr-1-config \
                  --with-java-home=$JAVA_HOME \
