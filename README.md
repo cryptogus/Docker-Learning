@@ -89,7 +89,7 @@ $ docker rmi -f `docker images -q`
 $ docker rm -f <CONTAINER ID>
 $ docker rmi -f <IMAGE ID>
 ```
-Dokcerfile 실행   
+Quantum-tomcat/Dokcerfile 실행   
 reference → https://docs.docker.com/engine/reference/commandline/build/
 ```bash
 $ docker build -t oqs_tom:v1 . # --network <nat 등> 원하는 option 추가
