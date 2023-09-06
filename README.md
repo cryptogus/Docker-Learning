@@ -85,7 +85,12 @@ $ docker inspect [OPTIONS] NAME|ID [NAME|ID...]
 $ docker rm -f `docker ps -aq`
 $ docker rmi -f `docker images -q`
 ```
+윈도우, 리눅스 환경 둘 다 사용가능한 command
+```bat
+PS> docker rm -f $(docker ps -aq)
+PS> docker rmi -f $(docker images -q)
 특정 docker 지정 삭제 command
+```
 ```bash
 $ docker rm -f <CONTAINER ID>
 $ docker rmi -f <IMAGE ID>
