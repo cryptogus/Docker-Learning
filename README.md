@@ -61,10 +61,11 @@ $ docker exec -it <CONTAINER ID or NAMES> /bin/bash
 # 컨테이너에서 나가는 명령어
 $ exit
 ```
+`--interactive` 플래그는 컨테이너에 접속된 상태를 의미하고 `--tty`는 터미널 세션을 통해 컨테이너를 조작하겠다는 플래그이다.
 ```bat
 # 윈도우라면 명령 프롬프트가 뜨고 리눅스라면 bash가 뜰 것이다.
 # 도커의 특징인 운영체제 공유때문!
-docker container run --interactive --tty <REPOSITORY>
+PS> docker container run --interactive --tty <REPOSITORY>
 ```
 ## Initializing the Docker environment
 ```bash
