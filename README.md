@@ -17,8 +17,8 @@ or
 $ cat /proc/cpuinfo
 ```
 ## Docker Desktop for Mac or Windows or Linux
-https://www.docker.com/get-started/
-
+https://www.docker.com/get-started/ \
+윈도우에서는 Docker Desktop 프로그램을 켜두면 터미널(PowerShell)에서 docker 명령어를 사용가능하며 요즘은 WSL2와 연동도 되어 WSL2 기반의 Ubuntu에서도 윈도우에서 프로그램만 켜두면 따로 apt로 패키지 설치하지 않더라고 docker 명령어를 사용가능하다.
 ## Docker install guide
 https://docs.docker.com/engine/install \
 https://docs.docker.com/compose/install/ \
