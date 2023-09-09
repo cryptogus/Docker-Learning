@@ -39,4 +39,7 @@ RUN cd openssl &&\
 
 ENV LD_LIBRARY_PATH=/root/openssl
 
+# container 내부로 연결 가능하도록 포트 공개, http 웹 서버 애플리케이션은 80번 포트를 주시
+# EXPOSE 80
+
 ENTRYPOINT ["./apache-tomcat-10.0.23/bin/catalina.sh", "run"]
