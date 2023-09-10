@@ -90,8 +90,8 @@ $ docker rmi -f `docker images -q`
 ```bat
 PS> docker rm -f $(docker ps -aq)
 PS> docker rmi -f $(docker images -q)
-특정 docker 지정 삭제 command
 ```
+특정 docker 지정 삭제 command
 ```bash
 $ docker rm -f <CONTAINER ID>
 $ docker rmi -f <IMAGE ID>
