@@ -5,8 +5,6 @@ The recommended book is "Docker in Action ed2"
 - OS: Ubuntu 22.04.2 LTS
 - CPU: 11th Gen Intel Core i7-1165G
 
-Not using WSL (WSL2를 이용한 ubuntu 환경자체가 도커라서 도커 실행이 안된다.)
-
 How to check computer information in Ubuntu
 ```bash
 $ sudo apt install inxi
